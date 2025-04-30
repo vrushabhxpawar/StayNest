@@ -34,7 +34,7 @@ module.exports.signup = wrapAsync(async (req, res) => {
       if(err){
         return next(err);
       }
-      req.flash('success', 'welcome to wanderlust');
+      req.flash('success', 'welcome to StayNest!');
       res.redirect('/listing');
     })
   }catch(e){
