@@ -1,0 +1,114 @@
+<% layout('layout/boilerplate') -%>
+
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <form
+      action="/listing"
+      method="post"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <label for="title" class="form-label">Title :</label>
+      <input
+        name="listing[title]"
+        type="text"
+        placeholder="Title"
+        id="title"
+        class="form-control"
+        required
+      />
+      <div class="invalid-feedback">Please enter a valid title</div>
+      <br />
+
+      <label for="des" class="form-label">Description :</label>
+      <textarea
+        name="listing[description]"
+        placeholder="description"
+        id="des"
+        class="form-control"
+        required
+      ></textarea>
+      <div class="invalid-feedback">Please enter a valid Descrption</div>
+      <br />
+
+      <label for="img-link" class="form-label">Upload Image :</label>
+      <input
+        name="listing[image]"
+        type="file"
+        id="img-link"
+        class="form-control"
+        required
+      />
+      <br />
+
+      <div class="row">
+        <div class="col-md-12">
+          <label for="price" class="form-label">Price :</label>
+          <input
+            type="text"
+            name="listing[price]"
+            placeholder="Price"
+            id="price"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid Price</div>
+          <br />
+        </div>
+        <!-- <div class="col-md-6">
+          <label for="category" class="form-label">Category : </label>
+          <select
+            name="listing[country]"
+            id="country"
+            class="form-control"
+            required
+          >
+            <option value="listing[category]">Select</option>
+            <option value="listing[category]">Mountains</option>
+            <option value="listing[category]">Artic</option>
+            <option value="listing[category]">Pools</option>
+            <option value="listing[category]">Beaches</option>
+            <option value="listing[category]">Lakes</option>
+            <option value="listing[category]">Farms</option>
+            <option value="listing[category]">Castles</option>
+            <option value="listing[category]">Rooms</option>
+          </select>
+        </div> -->
+        
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country : </label>
+          <input
+            type="text"
+            name="listing[country]"
+            placeholder="country"
+            id="country"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid Country</div>
+        </div>
+        <div class="col-md-6">
+          <label for="loc" class="form-label">Location :</label>
+          <input
+            type="text"
+            name="listing[location]"
+            placeholder="location"
+            id="loc"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid Location</div>
+          <br />
+        </div>
+       
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-dark add-btn">Add</button>
+    </form>
+  </div>
+</div>

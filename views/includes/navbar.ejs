@@ -1,0 +1,96 @@
+<style>
+  .search-bar{
+    display: flex;
+    margin-right: 18rem;
+  }
+  
+  .search-bar button {
+    width: 12rem;
+    background-color : #fe424d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem  ;
+    border-radius: 30px;
+    padding : 0 1rem 0 1rem;
+  }
+  .search-bar input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem  ;
+    border-radius: 30px;
+    padding : 0 1rem 0 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .globe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 0 0.5rem 0 0.5rem;
+  }
+  .user{  
+    width: 4.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 0 0.5rem 0 0.5rem;
+    opacity: 0.8;
+    gap: 0.5rem;
+    border: 1px solid rgb(85, 83, 83);
+    border-radius: 2rem;
+  }
+  .user:hover{
+    cursor: pointer;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5) ;
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+  <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/listing">Explore</a>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <form class="d-flex" role="search">
+      <input class="form-control " type="search" placeholder="Search Destination" aria-label="Search">
+      
+      <button class="btn btn-outline-danger ms-1" type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
+    </form>
+  </div>
+ 
+  <div class="navbar-nav">
+
+    <a class="nav-item nav-link" href="/listing/new">Staynest your home</a>
+    <i class="fa-solid fa-globe globe"></i>
+   
+    <% if(!currUser) { %>
+     
+      <a class="nav-item nav-link active" href="/signup"><b>Sign Up </b><span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/login"><b>Login</b></a>
+      <% } %>
+        <% if(currUser) { %>
+          <a class="nav-item nav-link" href="/logout"><b>Logout</b></a>
+          <% } %>
+  </div>
+</nav>
+
+<script>
+  let user = document.getElementsByClassName('user');
+  for( user of user ){
+    user.addEventListener('click', () => {
+        
+    });
+  }
+</script>
