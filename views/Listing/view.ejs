@@ -1,11 +1,10 @@
 <% layout('layout/boilerplate') -%>
 
-  <script>
-    let mapToken = "<%= process.env.MAP_TOKEN %>";
-    let coordinates = <% - JSON.stringify(item.geometry.coordinates) %>;
-    let title = <% - JSON.stringify(item.title) %>;
-    // let location = <%- JSON.stringify(item.location) %>
-  </script>
+<script>
+  let mapToken = "<%- process.env.MAP_TOKEN %>"; 
+  let coordinates = <%- JSON.stringify(item.geometry.coordinates) %>;
+  let title = <%- JSON.stringify(item.title) %>;
+</script>
 
   <div class="row mt-3">
     <div class="col-6 offset-3">
@@ -38,19 +37,14 @@
             </div>
             <br />
           </div>
-          <hr />
           <% } %>
-
       </div>
 
 
 
       <% if(currUser) { %>
-
+        <hr />
         <form action="/listing/<%=item._id%>/review" method="post" novalidate class="needs-validation">
-
-
-
           <fieldset class="starability-slot" id="rating">
             <h4>Rating</h4>
             <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked
@@ -78,7 +72,7 @@
         <% }%>
 
           <% if( item.review.length> 0) { %>
-            <hr />
+            <hr/> 
             <p><b>All Reviews</b></p>
 
 
@@ -94,12 +88,14 @@
                     <div class="card-text">
                       <%=review.comment%>
                     </div>
-                    <% if( currUser.username===review.author.username ) { %>
-                      <form action="/listing/<%=item._id%>/review/<%=review._id%>?_method=DELETE" method="post"
-                        class="mb-2">
-                        <button type="submit" class="btn btn-outline-danger">delete</button>
-                      </form>
-                      <% } %>
+                    <% if(currUser) { %>
+                      <% if(currUser.username===review.author.username ) { %>
+                        <form action="/listing/<%=item._id%>/review/<%=review._id%>?_method=DELETE" method="post"
+                          class="mb-2">
+                          <button type="submit" class="btn btn-outline-danger">delete</button>
+                        </form>
+                        <% } %>
+                          <% } %>
                   </div>
                 </div>
               </div>
@@ -114,6 +110,5 @@
     <h4>Where you'll be</h4>
     <div id="map"></div>
   </div>
-
 
   <script src="/js/map.js"></script>
