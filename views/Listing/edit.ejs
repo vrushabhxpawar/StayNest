@@ -1,6 +1,6 @@
 <% layout('layout/boilerplate') %>
 
-<div class="row mt-3">
+<div class="row mt-3 mb-3">
   <div class="col-8 offset-2">
     <form
       action="/listing/<%=item._id%>?_method=put"
@@ -34,8 +34,8 @@
       <div class="invalid-feedback">Please enter a valid descrption</div>
       <br />
 
-      <div>
-        <p>Original Image</p>
+      <div class="img-preview">
+        <p>Original Image :</p>
         <img src=" <%= originalImageUrl %> "/>
       </div>
 
