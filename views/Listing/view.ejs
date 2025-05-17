@@ -12,9 +12,10 @@
           <%=item.title%>
         </b></h2>
       <div class="listing-card">
-        <img src="<%=item.image.url %>" alt="listing-img" class="card-img-top show-img" class="card-img" />
+        <img src="<%=item.image.url %>" alt="listing-img" class="card-img-top show-img" class="card-img"/>
         <div class="card-body mt-3">
-          <p class="card-text"><i>Owned by : <b>
+          <p class="card-text">
+            <i>Owned by : <b>
                 <%= item.owner.username %>
               </b></i></p>
           <%=item.description%><br /><br />
