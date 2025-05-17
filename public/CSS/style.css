@@ -44,7 +44,19 @@
 
   .f-info-socials {
     width: 100%;
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+  }
+  .f-info-socials i {
+    opacity: 0.85;
+    transition: all 0.1s ease-in-out;
+  }
+  .f-info-socials i:hover {
+    opacity: 1;
+
   }
 
   .f-info-brand {
@@ -296,7 +308,7 @@
     padding: 1rem;
     height: 110vh;
     width: 45%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -336,14 +348,18 @@
 /* ---------- Phones ---------- */
 @media (max-width: 762px) {
   #cards {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 3rem;
   }
-
+  .card{
+    height: 310px !important  ;
+    width: 100% !important;
+  }
+  .card-img-top {
+    height: 170px !important;
+  }
   #filters {
     display: none;
   }
@@ -366,7 +382,7 @@
     padding: 1rem;
     height: 110vh;
     width: 45%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -381,7 +397,10 @@
     font-weight: 500;
     font-size: 1rem;
   }
-  
+    .review-card{
+      width: 100%;
+     
+    }
    
     .listing-card img.show-img {
       width: 100%;
