@@ -2,9 +2,12 @@
   class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top"
   id="navbar"
 >
-  <a class="navbar-brand" href="/listing"
+  <div>
+    <a class="navbar-brand" href="/listing"
     ><i class="fa-regular fa-compass"></i
   ></a>
+  </div>
+  
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
@@ -25,34 +28,45 @@
       </button>
     </form>
   </div>
-  <button class="navbar-toggler" type="button">
+  
+  <div>
+     <button class="navbar-toggler" type="button">
     <div class="navbar-toggler-icon"></div>
   </button>
-
+  </div>
+ 
+  
   <div class="navbar-nav">
-    <a class="nav-item nav-link" href="/listing/new">Staynest your home</a>
-    <i class="fa-solid fa-globe" id="globe"></i>
-    <% if(!currUser) { %>
+    <ul>
+      <i class="fa-solid fa-xmark" id="cross"></i>
+      <li><a class="nav-item nav-link" href="/listing/new">Staynest your home</a></li>
+      <li>
+        <% if(!currUser) { %>
     <a class="nav-item nav-link active" href="/signup"
       ><b>Sign Up </b><span class="sr-only">(current)</span></a
     >
-    <a class="nav-item nav-link" href="/login"><b>Login</b></a>
-    <% } %> <% if(currUser) { %>
+      </li>
+    <li><a class="nav-item nav-link" href="/login"><b>Login</b></a></li>
+      <li> <% } %> <% if(currUser) { %>
     <a class="nav-item nav-link" href="/logout"><b>Logout</b></a>
-    <% } %>
+    <% } %></li>
+   
+    </ul>
   </div>
 </nav>
 
 <script>
-  let user = document.getElementsByClassName("user");
-  for (user of user) {
-    user.addEventListener("click", () => {});
-  }
+  let sideMenu = document.querySelector(".navbar-toggler-icon");
+  sideMenu.addEventListener("click", function () {
+    console.log("clicked");
+    let menu = document.querySelector(".navbar-nav ul");
+    console.log(menu);
+    menu.style.marginRight= "0px";
+  });
 
-  let hamburger = document.getElementsByClassName("navbar-toggler");
-  for (ham of hamburger) {
-    ham.addEventListener("click", () => {
-     
-    });
-  }
+  let closeMenu = document.querySelector("#cross");
+  closeMenu.addEventListener("click", function () {
+    let menu = document.querySelector(".navbar-nav ul");
+    menu.style.marginRight= "-300px";
+  });
 </script>
