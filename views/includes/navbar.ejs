@@ -1,32 +1,33 @@
 <nav
-  class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top"
-  id="navbar"
+  class="navbar navbar-light bg-light border-bottom sticky-top"
 >
+
+<div style="display: flex;" class="brand">
   <div>
     <a class="navbar-brand" href="/listing"
     ><i class="fa-regular fa-compass"></i
   ></a>
   </div>
-  
-
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/listing">Explore</a>
+      <a class="nav-item nav-link" href="/listing" id="explore">Explore</a>
     </div>
+  </div>
   </div>
 
   <div class="search-bar ">
-    <form class="d-flex " role="search">
+
+    <form role="search">
       <input
         class="form-control"
         type="search"
-        placeholder="Search Destination"
+        placeholder="Search Destination..."
       />
-
-      <button class="btn btn-outline-danger ms-1" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>Search
-      </button>
     </form>
+    
+      <button class="btn btn-outline-danger ms-1" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
   </div>
   
   <div>
@@ -38,7 +39,7 @@
   
   <div class="navbar-nav">
     <ul>
-      <i class="fa-solid fa-xmark" id="cross"></i>
+      <p id="cross" style="text-decoration: underline;">Back</p>
       <li><a class="nav-item nav-link" href="/listing/new">Staynest your home</a></li>
       <li>
         <% if(!currUser) { %>
