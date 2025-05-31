@@ -218,6 +218,7 @@
     gap: 0.45rem  ;
     border-radius: 10px;
     padding : 0 1rem 0 1rem;
+    
   }
   .search-bar input {
     gap: 0.45rem  ;
@@ -278,6 +279,9 @@
     justify-content: center;
     align-items: center ;
   }
+  .card{
+    font-size: 1.15rem;
+  }
 
   #filters {
     width: 100%;
@@ -292,11 +296,19 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
+   .navbar{
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
   .navbar-nav ul{
+    font-size: 1rem !important;
     padding: 1rem;
     height: 110vh;
-    width: 45%;
-    background-color: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    background-color: #fe424d;
+    color: #000;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -304,12 +316,14 @@
     right: 0;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-right: -600px;
-    transition: right 0.3s !important;
+    margin-right: -800px;
+    transition:  0.5s !important;
   }
-  .navbar-nav ul li{
+  .navbar-nav ul li a{
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color: black !important;
+    opacity: 0.85;
   }
   .filter{
     font-size: 1rem;
@@ -389,7 +403,7 @@
     right: 0;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-right: -1000px;
+    margin-right: -300px;
     transition:  0.5s !important;
   }
   .navbar-nav ul li a{
