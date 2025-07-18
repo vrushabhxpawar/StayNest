@@ -1,73 +1,58 @@
-<nav
-  class="navbar navbar-light bg-light border-bottom sticky-top"
->
+<nav class="navbar navbar-light bg-light border-bottom sticky-top">
+  <div
+    class="container-fluid justify-content-between align-items-center d-flex"
+  >
+    <!-- Left Section: Brand -->
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand me-2" href="/listing">
+        <i class="fa-regular fa-compass"></i>
+      </a>
+      <a class="nav-link" href="/listing" id="explore">Explore</a>
+    </div>
 
-<div style="display: flex;" class="brand">
-  <div>
-    <a class="navbar-brand" href="/listing"
-    ><i class="fa-regular fa-compass"></i
-  ></a>
-  </div>
-  <div id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/listing" id="explore">Explore</a>
+    <!-- Center Section: Search Bar -->
+    <div class="search-bar-container d-flex justify-content-center flex-grow-1">
+      <form class="d-flex align-items-center" action="/search" method="GET">
+        <input
+          class="form-control"
+          type="search"
+          name="query"
+          placeholder="Search Destination..."
+        />
+        <button class="btn btn-outline-danger ms-2" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Section: Links & Auth Buttons -->
+    <div class="d-flex align-items-center">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <ul
+        class="navbar-nav d-flex flex-row align-items-center ms-3"
+        style="list-style: none; gap: 1rem; margin: 0"
+      >
+        <li>
+          <p id="cross" style="text-decoration: underline; margin: 0">Back</p>
+        </li>
+        <li><a class="nav-link" href="/listing/new">Staynest your home</a></li>
+
+        <% if (!currUser) { %>
+        <li>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        </li>
+        <li>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        </li>
+        <% } %> <% if (currUser) { %>
+        <li>
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
+        </li>
+        <% } %>
+      </ul>
     </div>
   </div>
-  </div>
-
-  <div class="search-bar ">
-
-    <form role="search">
-      <input
-        class="form-control"
-        type="search"
-        placeholder="Search Destination..."
-      />
-    </form>
-    
-      <button class="btn btn-outline-danger ms-1" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-  </div>
-  
-  <div>
-     <button class="navbar-toggler" type="button">
-    <div class="navbar-toggler-icon"></div>
-  </button>
-  </div>
- 
-  
-  <div class="navbar-nav">
-    <ul>
-      <p id="cross" style="text-decoration: underline;">Back</p>
-      <li><a class="nav-item nav-link" href="/listing/new">Staynest your home</a></li>
-      <li>
-        <% if(!currUser) { %>
-    <a class="nav-item nav-link active" href="/signup"
-      ><b>Sign Up </b><span class="sr-only">(current)</span></a
-    >
-      </li>
-    <li><a class="nav-item nav-link" href="/login"><b>Login</b></a></li>
-      <li> <% } %> <% if(currUser) { %>
-    <a class="nav-item nav-link" href="/logout"><b>Logout</b></a>
-    <% } %></li>
-   
-    </ul>
-  </div>
 </nav>
-
-<script>
-  let sideMenu = document.querySelector(".navbar-toggler-icon");
-  sideMenu.addEventListener("click", function () {
-    console.log("clicked");
-    let menu = document.querySelector(".navbar-nav ul");
-    console.log(menu);
-    menu.style.marginRight= "0px";
-  });
-
-  let closeMenu = document.querySelector("#cross");
-  closeMenu.addEventListener("click", function () {
-    let menu = document.querySelector(".navbar-nav ul");
-    menu.style.marginRight= "-1000px";
-  });
-</script>

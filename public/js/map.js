@@ -1,5 +1,5 @@
 mapboxgl.accessToken = mapToken;
-
+// console.log(mapToken);
 const map = new mapboxgl.Map({
   container: "map", // container ID
   center: coordinates || [77.216721, 28.6448], // starting position [lng, lat]. Note that lat must be set between -90 and 90
@@ -17,7 +17,7 @@ map.on("load", () => {
         `<h4>${title}</h4><p>Exact location will be provided after booking!</p>`
       )
   )
-  .addTo(map);
+  .addTo(map)
 });
 
 

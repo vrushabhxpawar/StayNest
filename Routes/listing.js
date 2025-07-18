@@ -24,5 +24,4 @@ router
   .delete(isLoggedIn, isOwner, listingControllers.deleteListing);
 
 router.get("/:id/edit", isLoggedIn, isOwner, listingControllers.renderEditForm);
-
 module.exports = router;

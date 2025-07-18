@@ -46,7 +46,7 @@ const listingSchema = new mongoose.Schema({
   },
   category : {
     type : String,
-    enum : ["Mountains", "Beaches", "Pools", "Artic", "Farms", "Lakes", "Castles" , "Rooms"]
+    enum : ["Mountains", "Beaches", "Pools", "Arctic", "Farms", "Lakes", "Castles" , "Rooms"]
   }
 })
 

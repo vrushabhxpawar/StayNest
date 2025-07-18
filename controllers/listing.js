@@ -34,22 +34,21 @@ module.exports.deleteListing = wrapAsync(async (req, res) => {
 });
 
 module.exports.listingCreated = wrapAsync(async (req, res, next) => {
+  console.log("Form Data:", req.body)
   let response = await geoCodingClient.forwardGeocode({
     query : req.body.listing.location,
     limit : 1,
   })
   .send();
 
-  
   let url = req.file.path;
   let filename = req.file.filename;
   const newListing = req.body.listing;
+  console.log(newListing);
   newListing.owner = req.user._id;
   newListing.image = {url , filename};
   newListing.geometry = response.body.features[0].geometry;
- 
   await Listing.insertOne(newListing);
-  console.log(newListing);
   req.flash("success", "New Listing Created!");
   res.redirect("/listing");
 });
@@ -79,5 +78,4 @@ module.exports.updateListing = wrapAsync(async (req, res, next) => {
  
   req.flash("success", "List updated Successfully!");
   res.redirect(`/listing/${id}`);
-
 });
