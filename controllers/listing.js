@@ -34,6 +34,7 @@ module.exports.deleteListing = wrapAsync(async (req, res) => {
 });
 
 module.exports.listingCreated = wrapAsync(async (req, res, next) => {
+  
   console.log("Form Data:", req.body)
   let response = await geoCodingClient.forwardGeocode({
     query : req.body.listing.location,

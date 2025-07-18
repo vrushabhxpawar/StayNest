@@ -7,7 +7,7 @@ router
   .get(searchControllers.searchListing);
 
 router  
-  .route('/filter')
+  .route('/filter/:category')
   .get(searchControllers.filterlistings);
 
 module.exports = router;

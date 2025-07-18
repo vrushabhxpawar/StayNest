@@ -28,11 +28,12 @@ module.exports.searchListing = async (req, res) => {
 module.exports.filterlistings = async( req, res) => {
   const { category } = req.params;
 
-  const validCategories = ["Mountains", "Beaches", "Pools", "Arctic", "Farms", "Lakes", "Castles", "Rooms"];
+  const validCategories = ["Mountain", "Beach", "Pool", "Snowland", "Farm", "Lake", "Castle" , "Room", "Iconic-City", "Camping", "Worship", "Forest"];
    if (!validCategories.includes(category)) {
     return res.status(404).send("Invalid category");
   }
 
    const listings = await Listing.find({ category });
+   console.log(listings);
    res.render("./Listing/filter.ejs", { listings, category });
 }
